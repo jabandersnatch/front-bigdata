@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { IReq2 } from '@/models/req2';
 
 const req2ListPage = () => {
-  const [req2s, setreq2s] = useState<IReq2[]>([]);
+  const [req2s, setReq2s] = useState<IReq2[]>([]);
   const [filter, setFilter] = useState('');
 
   useEffect(() => {
@@ -10,7 +10,7 @@ const req2ListPage = () => {
       const response = await fetch('/api/req_2');
       const data = await response.json();
     
-      setreq2s(data);
+      setReq2s(data);
     };
     fetchreq2s();
   }, []);

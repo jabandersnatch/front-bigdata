@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { IReqAd1 } from '@/models/req_ad1';
 
 const req_ad1ListPage = () => {
-  const [req_ad1s, setreq_ad1s] = useState<IReqAd1[]>([]);
+  const [req_ad1s, setReq_ad1s] = useState<IReqAd1[]>([]);
   const [filter, setFilter] = useState('');
 
   useEffect(() => {
@@ -10,7 +10,7 @@ const req_ad1ListPage = () => {
       const response = await fetch('/api/req_ad1');
       const data = await response.json();
     
-      setreq_ad1s(data);
+      setReq_ad1s(data);
     };
     fetchreq_ad1s();
   }, []);

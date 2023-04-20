@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { IReq5_2 } from '@/models/req5_2';
 
 const req5_2ListPage = () => {
-  const [req5_2s, setreq5_2s] = useState<IReq5_2[]>([]);
+  const [req5_2s, setReq5_2s] = useState<IReq5_2[]>([]);
   const [filter, setFilter] = useState('');
 
   useEffect(() => {
@@ -10,7 +10,7 @@ const req5_2ListPage = () => {
       const response = await fetch('/api/req5_2');
       const data = await response.json();
     
-      setreq5_2s(data);
+      setReq5_2s(data);
     };
     fetchreq5_2s();
   }, []);
