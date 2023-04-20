@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { IReq2 } from '@/models/req2';
 
-const req2ListPage = () => {
+const Req2ListPage = () => {
   const [req2s, setReq2s] = useState<IReq2[]>([]);
   const [filter, setFilter] = useState('');
 
@@ -57,4 +57,4 @@ const req2ListPage = () => {
   );
 };
 
-export default req2ListPage;
+export default Req2ListPage;

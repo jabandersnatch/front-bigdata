@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { IReq5_2 } from '@/models/req5_2';
 
-const req5_2ListPage = () => {
+const Req5_2ListPage = () => {
   const [req5_2s, setReq5_2s] = useState<IReq5_2[]>([]);
   const [filter, setFilter] = useState('');
 
@@ -61,4 +61,4 @@ const req5_2ListPage = () => {
   );
 };
 
-export default req5_2ListPage;
+export default Req5_2ListPage;
