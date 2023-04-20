@@ -19,3 +19,5 @@ const Req5_2Schema = new Schema<IReq5_2>({
 const Req5_2Model = model<IReq5_2>("req5_2_2017_1", Req5_2Schema);
 
 export default Req5_2Model;
+
+export type {IReq5_2}

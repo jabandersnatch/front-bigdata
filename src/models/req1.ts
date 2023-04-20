@@ -17,3 +17,5 @@ const Req1Schema = new Schema<IReq1>({
 const Req1Model = model<IReq1>("Req1_2017_1", Req1Schema);
 
 export default Req1Model;
+
+export type {IReq1}

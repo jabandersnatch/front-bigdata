@@ -1,31 +1,31 @@
 import { useState, useEffect } from 'react';
-import { IReq1 } from '@/models/req1';
+import { IReq3 } from '@/models/req3';
 
-const Req1ListPage = () => {
-  const [req1s, setReq1s] = useState<IReq1[]>([]);
+const req3ListPage = () => {
+  const [req3s, setreq3s] = useState<IReq3[]>([]);
   const [filter, setFilter] = useState('');
 
   useEffect(() => {
-    const fetchReq1s = async () => {
-      const response = await fetch('/api/req_1');
+    const fetchreq3s = async () => {
+      const response = await fetch('/api/req_3');
       const data = await response.json();
-
-      setReq1s(data);
+    
+      setreq3s(data);
     };
-    fetchReq1s();
+    fetchreq3s();
   }, []);
 
   const handleFilterChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setFilter(event.target.value);
   };
 
-  const filteredReq1s = req1s.filter((req1) =>
-    req1.STATE.toLowerCase().includes(filter.toLowerCase())
+  const filteredreq3s = req3s.filter((req3) =>
+    req3.STATE.toLowerCase().includes(filter.toLowerCase())
   );
 
   return (
     <div className="container mx-auto py-4">
-      <h1 className="text-2xl font-bold mb-4">Req1 List</h1>
+      <h1 className="text-2xl font-bold mb-4">¿Qué tanto afectó la pandemia al tráfico de embarcaciones teniendo en cuenta el número de embarcaciones por mes en cada estado en años anteriores?</h1>
       <div className="mb-4">
         <label className="block text-gray-700 font-bold mb-2">Filter by STATE:</label>
         <input
@@ -41,16 +41,14 @@ const Req1ListPage = () => {
             <th className="px-4 py-2">STATE</th>
             <th className="px-4 py-2">Year</th>
             <th className="px-4 py-2">Month</th>
-            <th className="px-4 py-2">Count</th>
           </tr>
         </thead>
         <tbody>
-          {filteredReq1s.map((req1) => (
-            <tr key={req1._id}>
-              <td className="border px-4 py-2">{req1.STATE}</td>
-              <td className="border px-4 py-2">{req1.year}</td>
-              <td className="border px-4 py-2">{req1.month}</td>
-              <td className="border px-4 py-2">{req1.count}</td>
+          {filteredreq3s.map((req3) => (
+            <tr key={req3._id}>
+              <td className="border px-4 py-2">{req3.STATE}</td>
+              <td className="border px-4 py-2">{req3.month_year}</td>
+              <td className="border px-4 py-2">{req3.Cargo}</td>
             </tr>
           ))}
         </tbody>
@@ -59,4 +57,4 @@ const Req1ListPage = () => {
   );
 };
 
-export default Req1ListPage;
+export default req3ListPage;

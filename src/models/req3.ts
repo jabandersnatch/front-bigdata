@@ -15,3 +15,5 @@ const Req3Schema = new Schema<IReq3>({
 const Req3Model = model<IReq3>("req3_2017_1", Req3Schema);
 
 export default Req3Model;
+
+export type {IReq3}

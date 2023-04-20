@@ -10,10 +10,9 @@ export default async function handler(
     if ( req.method === 'POST' ) {
     await DBconnect()
     const req1 = new Req2Model({
-      STATE: 'CA',
-      year: 2020,
-      month: 1,
-      count: 1,
+      STATE: "CA",
+      month_year: 11,
+      Cargo: "32",
     })
     await req1.save();
     res.status(200).json(req1)
